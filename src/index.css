@@ -15,9 +15,6 @@
   --muted: rgba(240, 240, 245, 0.4);
 }
 
-* {
-  cursor: none;
-}
 
 html,
 body,
@@ -37,11 +34,9 @@ section {
 }
 
 .hero-sky {
-  background:
-    radial-gradient(circle at 20% 20%, rgba(122, 142, 255, 0.18), transparent 34%),
-    radial-gradient(circle at 72% 12%, rgba(121, 101, 255, 0.24), transparent 36%),
-    radial-gradient(circle at 55% 58%, rgba(34, 86, 174, 0.2), transparent 52%),
-    linear-gradient(180deg, #090b15 0%, #05060b 58%, #07090f 100%);
+  background-image: url('./assets/hero-background.svg');
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-stars {
@@ -56,18 +51,18 @@ section {
 }
 
 .hero-fog {
-  filter: blur(30px);
-  opacity: 0.75;
+  filter: blur(34px);
+  opacity: 0.68;
   background:
-    radial-gradient(circle at 34% 38%, rgba(102, 126, 221, 0.27), transparent 42%),
-    radial-gradient(circle at 70% 44%, rgba(226, 236, 255, 0.18), transparent 34%),
-    radial-gradient(circle at 50% 100%, rgba(173, 184, 255, 0.24), transparent 46%);
+    radial-gradient(circle at 24% 42%, rgba(116, 140, 232, 0.22), transparent 44%),
+    radial-gradient(circle at 76% 48%, rgba(230, 237, 255, 0.16), transparent 38%),
+    radial-gradient(circle at 50% 100%, rgba(173, 184, 255, 0.2), transparent 48%);
 }
 
 .hero-title {
-  font-family: 'Space Grotesk', 'DM Sans', sans-serif;
-  font-size: clamp(2.8rem, 11vw, 8.8rem);
-  font-weight: 800;
+  font-family: 'Archivo', 'Space Grotesk', 'DM Sans', sans-serif;
+  font-size: clamp(3.2rem, 13vw, 10.5rem);
+  font-weight: 900;
   line-height: 0.88;
   letter-spacing: -0.05em;
   color: rgba(248, 250, 255, 0.97);
@@ -100,4 +95,11 @@ section {
   margin-top: -2px;
   padding-top: 8rem;
   background: linear-gradient(180deg, rgba(5, 7, 12, 1) 0%, rgba(5, 5, 8, 1) 28%);
+}
+
+.hero-cloud-layer {
+  background-image: url('./assets/clouds-texture.svg');
+  background-size: cover;
+  background-position: center bottom;
+  mix-blend-mode: screen;
 }

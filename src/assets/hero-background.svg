@@ -1,0 +1,25 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="auroraA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320 220) rotate(24) scale(560 380)">
+      <stop stop-color="#7C7BFF" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#7C7BFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="auroraB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1220 180) rotate(168) scale(540 360)">
+      <stop stop-color="#9AB7FF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#9AB7FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="auroraC" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(860 560) rotate(90) scale(620 360)">
+      <stop stop-color="#265BB8" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#265BB8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="night" x1="800" y1="0" x2="800" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1020"/>
+      <stop offset="0.58" stop-color="#070B15"/>
+      <stop offset="1" stop-color="#06080F"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#night)"/>
+  <rect width="1600" height="1000" fill="url(#auroraA)"/>
+  <rect width="1600" height="1000" fill="url(#auroraB)"/>
+  <rect width="1600" height="1000" fill="url(#auroraC)"/>
+</svg>

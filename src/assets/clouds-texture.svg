@@ -1,0 +1,17 @@
+<svg width="1600" height="500" viewBox="0 0 1600 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cloudFade" x1="800" y1="50" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ECF2FF" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#090C15" stop-opacity="0.96"/>
+    </linearGradient>
+    <filter id="soft" x="-15%" y="-30%" width="130%" height="170%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+  <g filter="url(#soft)" opacity="0.9">
+    <path d="M0 190C95 126 198 230 318 176C452 114 584 238 734 170C878 104 1028 220 1178 162C1302 116 1424 190 1600 142V500H0V190Z" fill="url(#cloudFade)"/>
+  </g>
+  <g opacity="0.62">
+    <path d="M0 244C104 198 228 286 364 244C522 196 668 300 820 238C966 182 1120 286 1262 238C1378 198 1476 230 1600 212V500H0V244Z" fill="url(#cloudFade)"/>
+  </g>
+</svg>
