@@ -8,42 +8,15 @@ export default function Hero() {
     const root = rootRef.current;
     if (!root) return;
 
-    const layersRoot = root.querySelector<HTMLElement>('[data-parallax-layers]');
-
     const ctx = gsap.context(() => {
-      if (layersRoot) {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: root,
-            start: 'top top',
-            end: '+=220%',
-            scrub: 1,
-            pin: true,
-            anticipatePin: 1,
-          },
-        });
-
-        const layers = [
-          { layer: '1', yPercent: -36, opacity: 0.72 },
-          { layer: '2', yPercent: -58, opacity: 0.88 },
-          { layer: '3', yPercent: -86, opacity: 0.96 },
-        ];
-
-        tl.to('.hero-sky', { scale: 1.03, ease: 'none' }, 0)
-          .to('.hero-fog', { yPercent: -30, opacity: 0.55, ease: 'none' }, 0.05);
-
-        layers.forEach((layerObj, idx) => {
-          tl.to(
-            layersRoot.querySelectorAll(`[data-parallax-layer="${layerObj.layer}"]`),
-            {
-              yPercent: layerObj.yPercent,
-              opacity: layerObj.opacity,
-              ease: 'none',
-            },
-            idx === 0 ? 0 : '<',
-          );
-        });
-      }
+      gsap.to('[data-parallax-layer]', {
+        yPercent: -4,
+        duration: 10,
+        yoyo: true,
+        repeat: -1,
+        ease: 'sine.inOut',
+        stagger: 0.35,
+      });
 
       gsap.to('.hero-stars', {
         backgroundPosition: '0 320px',
