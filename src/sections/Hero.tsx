@@ -8,23 +8,42 @@ export default function Hero() {
     const root = rootRef.current;
     if (!root) return;
 
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: root,
-          start: 'top top',
-          end: '+=220%',
-          scrub: 1.5,
-          pin: true,
-          anticipatePin: 1,
-        },
-      });
+    const layersRoot = root.querySelector<HTMLElement>('[data-parallax-layers]');
 
-      tl.to('.hero-sky', { scale: 1.03, ease: 'none' }, 0)
-        .to('.hero-cloud-layer-back', { yPercent: -36, opacity: 0.72, ease: 'none' }, 0)
-        .to('.hero-cloud-layer-mid', { yPercent: -58, opacity: 0.88, ease: 'none' }, 0)
-        .to('.hero-cloud-layer-front', { yPercent: -86, opacity: 0.96, ease: 'none' }, 0)
-        .to('.hero-fog', { yPercent: -30, opacity: 0.55, ease: 'none' }, 0.05);
+    const ctx = gsap.context(() => {
+      if (layersRoot) {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: root,
+            start: 'top top',
+            end: '+=220%',
+            scrub: 1,
+            pin: true,
+            anticipatePin: 1,
+          },
+        });
+
+        const layers = [
+          { layer: '1', yPercent: -36, opacity: 0.72 },
+          { layer: '2', yPercent: -58, opacity: 0.88 },
+          { layer: '3', yPercent: -86, opacity: 0.96 },
+        ];
+
+        tl.to('.hero-sky', { scale: 1.03, ease: 'none' }, 0)
+          .to('.hero-fog', { yPercent: -30, opacity: 0.55, ease: 'none' }, 0.05);
+
+        layers.forEach((layerObj, idx) => {
+          tl.to(
+            layersRoot.querySelectorAll(`[data-parallax-layer="${layerObj.layer}"]`),
+            {
+              yPercent: layerObj.yPercent,
+              opacity: layerObj.opacity,
+              ease: 'none',
+            },
+            idx === 0 ? 0 : '<',
+          );
+        });
+      }
 
       gsap.to('.hero-stars', {
         backgroundPosition: '0 320px',
@@ -69,10 +88,10 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-[-2px] z-20 h-[42vh] min-h-[260px]">
-        <div className="hero-cloud-layer hero-cloud-layer-back" aria-hidden="true" />
-        <div className="hero-cloud-layer hero-cloud-layer-mid" aria-hidden="true" />
-        <div className="hero-cloud-layer hero-cloud-layer-front" aria-hidden="true" />
+      <div data-parallax-layers className="pointer-events-none absolute inset-x-0 bottom-[-2px] z-20 h-[42vh] min-h-[260px]">
+        <div data-parallax-layer="1" className="hero-cloud-layer hero-cloud-layer-back" aria-hidden="true" />
+        <div data-parallax-layer="2" className="hero-cloud-layer hero-cloud-layer-mid" aria-hidden="true" />
+        <div data-parallax-layer="3" className="hero-cloud-layer hero-cloud-layer-front" aria-hidden="true" />
       </div>
     </section>
   );
