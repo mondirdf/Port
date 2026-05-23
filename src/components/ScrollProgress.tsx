@@ -1,0 +1,2 @@
+import { useEffect, useState } from 'react';
+export default function ScrollProgress(){const[p,setP]=useState(0);useEffect(()=>{const s=()=>{const h=document.documentElement;setP((h.scrollTop/(h.scrollHeight-h.clientHeight))*100)};window.addEventListener('scroll',s);s();return()=>window.removeEventListener('scroll',s)},[]);return <div className="fixed left-0 top-0 z-50 h-1 bg-gradient-to-r from-violet-400 to-emerald-300" style={{width:`${p}%`}}/>}

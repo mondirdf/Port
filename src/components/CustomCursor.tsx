@@ -1,0 +1,2 @@
+import { useEffect, useState } from 'react';
+export default function CustomCursor() { const [p, setP] = useState({ x: 0, y: 0 }); useEffect(() => { const m = (e: MouseEvent) => setP({ x: e.clientX, y: e.clientY }); window.addEventListener('mousemove', m); return () => window.removeEventListener('mousemove', m); }, []); return <div className="pointer-events-none fixed z-50 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/30" style={{ left: p.x, top: p.y }} />; }

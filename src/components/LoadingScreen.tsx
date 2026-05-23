@@ -1,0 +1,2 @@
+import { motion, AnimatePresence } from 'framer-motion';
+export default function LoadingScreen({ done }: { done: boolean }) { return <AnimatePresence>{!done && <motion.div initial={{opacity:1}} exit={{opacity:0}} className="fixed inset-0 z-[60] grid place-items-center bg-black"><motion.div animate={{rotate:360}} transition={{repeat:Infinity,duration:1.2,ease:'linear'}} className="h-16 w-16 rounded-full border-2 border-violet-400 border-t-transparent"/></motion.div>}</AnimatePresence>; }
