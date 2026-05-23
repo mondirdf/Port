@@ -1,0 +1,1 @@
+export default function AmbientLights(){return <div className="pointer-events-none fixed inset-0 -z-10"><div className="absolute left-1/4 top-24 h-80 w-80 rounded-full bg-violet-500/25 blur-3xl"/><div className="absolute right-1/4 top-1/2 h-80 w-80 rounded-full bg-emerald-400/15 blur-3xl"/></div>}

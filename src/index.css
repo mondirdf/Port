@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #050508;
+  --bg2: #0A0A14;
+  --bg3: #0D0805;
+  --surface: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.08);
+  --v1: #6C63FF;
+  --v2: #00F5A0;
+  --v3: #FF6B35;
+  --text: #F0F0F5;
+  --muted: rgba(240,240,245,0.40);
+}
+*{cursor:none}
+html,body,#root{margin:0;min-height:100%;background:radial-gradient(circle at 20% 0%, var(--bg2), var(--bg));font-family:'DM Sans',sans-serif}
+section{position:relative}
