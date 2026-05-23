@@ -4,16 +4,100 @@
 
 :root {
   --bg: #050508;
-  --bg2: #0A0A14;
-  --bg3: #0D0805;
-  --surface: rgba(255,255,255,0.04);
-  --border: rgba(255,255,255,0.08);
-  --v1: #6C63FF;
-  --v2: #00F5A0;
-  --v3: #FF6B35;
-  --text: #F0F0F5;
-  --muted: rgba(240,240,245,0.40);
+  --bg2: #0a0a14;
+  --bg3: #0d0805;
+  --surface: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.08);
+  --v1: #6c63ff;
+  --v2: #00f5a0;
+  --v3: #ff6b35;
+  --text: #f0f0f5;
+  --muted: rgba(240, 240, 245, 0.4);
 }
-*{cursor:none}
-html,body,#root{margin:0;min-height:100%;background:radial-gradient(circle at 20% 0%, var(--bg2), var(--bg));font-family:'DM Sans',sans-serif}
-section{position:relative}
+
+* {
+  cursor: none;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  background: radial-gradient(circle at 20% 0%, var(--bg2), var(--bg));
+  font-family: 'DM Sans', sans-serif;
+}
+
+section {
+  position: relative;
+}
+
+.hero-section {
+  background: #05060b;
+}
+
+.hero-sky {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(122, 142, 255, 0.18), transparent 34%),
+    radial-gradient(circle at 72% 12%, rgba(121, 101, 255, 0.24), transparent 36%),
+    radial-gradient(circle at 55% 58%, rgba(34, 86, 174, 0.2), transparent 52%),
+    linear-gradient(180deg, #090b15 0%, #05060b 58%, #07090f 100%);
+}
+
+.hero-stars {
+  opacity: 0.7;
+  background-image:
+    radial-gradient(circle at 12% 25%, rgba(255, 255, 255, 0.9) 0 1px, transparent 1px),
+    radial-gradient(circle at 38% 72%, rgba(255, 255, 255, 0.55) 0 1px, transparent 1px),
+    radial-gradient(circle at 78% 30%, rgba(255, 255, 255, 0.8) 0 1px, transparent 1px),
+    radial-gradient(circle at 64% 58%, rgba(198, 214, 255, 0.5) 0 2px, transparent 2px),
+    radial-gradient(circle at 88% 82%, rgba(255, 255, 255, 0.5) 0 1px, transparent 1px);
+  background-size: 340px 340px;
+}
+
+.hero-fog {
+  filter: blur(30px);
+  opacity: 0.75;
+  background:
+    radial-gradient(circle at 34% 38%, rgba(102, 126, 221, 0.27), transparent 42%),
+    radial-gradient(circle at 70% 44%, rgba(226, 236, 255, 0.18), transparent 34%),
+    radial-gradient(circle at 50% 100%, rgba(173, 184, 255, 0.24), transparent 46%);
+}
+
+.hero-title {
+  font-family: 'Space Grotesk', 'DM Sans', sans-serif;
+  font-size: clamp(2.8rem, 11vw, 8.8rem);
+  font-weight: 800;
+  line-height: 0.88;
+  letter-spacing: -0.05em;
+  color: rgba(248, 250, 255, 0.97);
+  text-shadow: 0 6px 38px rgba(122, 149, 255, 0.28);
+}
+
+.hero-cloud-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-cloud-layer-back {
+  filter: blur(18px);
+  opacity: 0.68;
+}
+
+.hero-cloud-layer-mid {
+  filter: blur(10px);
+  opacity: 0.85;
+}
+
+.hero-cloud-layer-front {
+  filter: blur(4px);
+  opacity: 1;
+}
+
+#projects {
+  margin-top: -2px;
+  padding-top: 8rem;
+  background: linear-gradient(180deg, rgba(5, 7, 12, 1) 0%, rgba(5, 5, 8, 1) 28%);
+}
